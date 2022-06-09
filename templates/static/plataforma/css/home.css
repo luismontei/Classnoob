@@ -1,0 +1,37 @@
+.search-div{
+    padding: 7%;
+}
+
+.form-control{
+    text-align: center;
+}
+.area_busca{
+    text-align: center;
+}
+
+@media screen and (max-width: 760px){
+
+    section, aside{
+        width: 100%;
+        padding: 0;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+nav li {
+    float: none;
+    text-align: center;
+    width: 100%;
+    }
+}
+
+.btn_sair{
+
+    color: white;
+    font-size: 10px;
+    border: 2px solid white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+}
+

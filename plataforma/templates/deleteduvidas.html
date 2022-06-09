@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block 'head'%}
+    <link rel="stylesheet" href="{% static 'plataforma/css/home.css'%}">
+{%endblock%}
+
+
+{% block 'titulo' %}Excluir perguntas{% endblock %}
+
+{% block 'body' %}
+
+<div class="card-group col-6" style="margin-left:25%; margin-top: 5%;">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"> Confirme para excluir a pergunta definitivamente.</h5>
+    </div>
+    <div class="card-footer">
+      <p class="Iead"> Deseja excluir a pergunta: <b>{{object}}</b></p>
+
+      <form method="post"> {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-danger"> Excluir </button>
+      </form>
+
+    </div>
+  </div>
+</div>
+{%endblock%}

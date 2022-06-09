@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% load crispy_forms_tags %}
+
+{%block 'head'%}
+    <link rel="stylesheet" href="{% static 'plataforma/css/home.css'%}">
+{%endblock%}
+
+
+{% block 'titulo' %}Criar perguntas{% endblock %}
+
+{% block 'body' %}
+
+{% if request.user.is_authenticated%}
+
+<h3> Cadastrar perguntas </h3>
+<p class="Iead">
+    Preencha todos os campos obrigatórios.
+</p>
+
+<form method="post" enctype="multipart/form-data"> {% csrf_token %}
+        {{form|bootstrap}}
+        <button type="submit" class="btn btn-primary mt-3"> Salvar </button>
+</form>
+
+<br>
+<br>
+<br>
+{%endif%}
+{%endblock%}
